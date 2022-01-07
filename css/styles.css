@@ -1,15 +1,4 @@
 @charset "UTF-8";
-/*!
-* Start Bootstrap - Agency v7.0.10 (https://startbootstrap.com/theme/agency)
-* Copyright 2013-2021 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-agency/blob/master/LICENSE)
-*/
-/*!
- * Bootstrap v5.1.3 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -62,6 +51,7 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
+  --btn-primary-color: rgb(11, 78, 179)
 }
 
 *,
@@ -11341,7 +11331,7 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #212529;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -11375,7 +11365,7 @@ p {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border: none;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.75);
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
@@ -11410,11 +11400,12 @@ header.masthead {
   padding-bottom: 6rem;
   text-align: center;
   color: #fff;
-  background-image: url("../assets/img/header-bg.jpg");
+  background-image: url("../assets/img/headpic.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
   background-size: cover;
+  
 }
 header.masthead .masthead-subheading {
   font-size: 1.5rem;
@@ -11776,4 +11767,252 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-align: center;
   font-size: 0.9rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+
+
+
+
+
+
+
+label {
+  display: block;
+  margin-bottom: 0.5rem
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  height: 50px
+}
+
+.width-50 {
+  width: 50%
+}
+
+.ml-auto {
+  margin-left: auto
+}
+
+.text-center {
+  text-align: center
+}
+
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem 0 4rem
+}
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: #dcdcdc;
+  z-index: 1
+}
+
+.progress {
+  background-color: rgb(0 128 0);
+  width: 0%;
+  transition: 0.3s
+}
+
+.progress-step {
+  width: 2.1875rem;
+  height: 2.1875rem;
+  background-color: #dcdcdc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step)
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #666
+}
+
+.progress-step-active {
+  background-color: var();
+  color: #f3f3f3
+}
+
+.form {
+  width: clamp(320px, 30%, 430px);
+  margin: 0 auto;
+  border: none;
+  border-radius: 10px !important;
+  overflow: hidden;
+  padding: 1.5rem;
+  background-color: #fff;
+  padding: 20px 30px
+}
+
+.step-forms {
+  display: none;
+  transform-origin: top;
+  animation: animate 1s
+}
+
+.step-forms-active {
+  display: block
+}
+
+.group-inputs {
+  margin: 1rem 0
+}
+
+@keyframes animate {
+  from {
+      transform: scale(1, 0);
+      opacity: 0
+  }
+
+  to {
+      transform: scale(1, 1);
+      opacity: 1
+  }
+}
+
+.form .btns-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem
+}
+
+.form .btn {
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: var(--btn-primary-color);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s
+}
+
+.form .btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--btn-primary-color)
+}
+
+.progress-step-check {
+  position: relative;
+  background-color: green !important;
+  transition: all 0.8s
+}
+
+.progress-step-check::before {
+  position: absolute;
+  content: '\2713';
+  width: 100%;
+  height: 100%;
+  top: 8px;
+  left: 13px;
+  font-size: 12px
+}
+
+.group-inputs {
+  position: relative
+}
+
+.group-inputs label {
+  font-size: 13px;
+  position: absolute;
+  height: 19px;
+  padding: 4px 7px;
+  top: -14px;
+  left: 10px;
+  color: #a2a2a2;
+  background-color: white
+}
+
+.welcome {
+  height: 450px;
+  width: 350px;
+  background-color: #fff;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+
+.welcome .content {
+  display: flex;
+  align-items: center;
+  flex-direction: column
+}
+
+.checkmark__circle {
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  stroke-width: 2;
+  stroke-miterlimit: 10;
+  stroke: #7ac142;
+  fill: none;
+  animation: stroke 0.6s cubic-bezier(0.65, 0, 0.45, 1) forwards
+}
+
+.checkmark {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: block;
+  stroke-width: 2;
+  stroke: #fff;
+  stroke-miterlimit: 10;
+  margin: 10% auto;
+  box-shadow: inset 0px 0px 0px #7ac142;
+  animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both
+}
+
+.checkmark__check {
+  transform-origin: 50% 50%;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: stroke 0.3s cubic-bezier(0.65, 0, 0.45, 1) 0.8s forwards
+}
+
+@keyframes stroke {
+  100% {
+      stroke-dashoffset: 0
+  }
+}
+
+@keyframes scale {
+
+  0%,
+  100% {
+      transform: none
+  }
+
+  50% {
+      transform: scale3d(1.1, 1.1, 1)
+  }
+}
+
+@keyframes fill {
+  100% {
+      box-shadow: inset 0px 0px 0px 30px #7ac142
+  }
 }
